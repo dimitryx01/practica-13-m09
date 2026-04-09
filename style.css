@@ -1,0 +1,817 @@
+/* =================================
+   ESTILOS GENERALES by Jolman
+   ================================= */
+
+
+ /* EJERCICIO 6.1: Regla global para que imágenes y vídeos se escalen correctamente */
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+
+:root {
+  --color-principal: #ff9505;
+  --color-secundario: #ffb627;
+  --color-fondo: #ffffff;
+  --color-texto: #333;
+  --color-blanco: #ffffff;
+  --color-fondo: #ffc971;
+  --color-gris-claro: #f5f5f5;
+  --color-gris-medio: #eee;
+  --color-gris-oscuro: #e0e0e0;
+  --color-gris-muy-claro: #fafafa;
+  --color-borde: var(--color-principal);
+  --color-borde-claro: var(--color-principal);
+  --color-texto-claro: #666;
+  --color-activo: yellow;
+  --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--color-blanco);
+  color: var(--color-texto);
+}
+
+/* ====== HEADER ====== */
+header {
+  width: 100%;
+  background: var(--color-principal);
+  color: var(--color-blanco);
+}
+
+header .header-w {
+  max-width: 1250px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+}
+
+/* ====== LOGO ANIMADO ====== */
+.logo {
+    width: 150px;
+    height: 50px;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    overflow: visible;
+    cursor: pointer;
+    /* Transición para que el inicio/fin del tambaleo sea suave */
+    transition: transform 0.3s ease;
+}
+
+/* Cuando pasas el ratón, el contenedor completo tambalea */
+.logo:hover {
+    animation: tambaleoSuave 0.6s ease-in-out infinite;
+}
+
+.logo-part {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+}
+
+/* Cuadrado (logo-1.png) */
+.logo-cuadrado {
+    width: 50px;
+    height: 50px;
+    background-image: url('img/logo-1.png');
+    animation: entradaCuadrado 2.2s ease-out forwards;
+    opacity: 0;
+}
+
+/* Rectángulo (logo-2.png) */
+.logo-rectangulo {
+    width: 100px;
+    height: 50px;
+    background-image: url('img/logo-2.png');
+    animation: entradaRectangulo 0.8s ease-out 1.2s forwards;
+    opacity: 0;
+}
+
+/* ====== ANIMACIONES DE ENTRADA ====== */
+@keyframes entradaCuadrado {
+    0% { transform: translateX(200px) rotate(0deg); opacity: 0; }
+    50% { transform: translateX(100px) rotate(360deg); opacity: 1; }
+    100% { transform: translateX(0) rotate(720deg); opacity: 1; }
+}
+
+@keyframes entradaRectangulo {
+    0% { transform: translateY(-80px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+/* ====== NUEVA ANIMACIÓN DE TAMBALEO SUAVE ====== */
+/* Se aplica al contenedor padre para no romper las piezas hijas */
+@keyframes tambaleoSuave {
+    0%, 100% {
+        transform: rotate(0deg) scale(1.05);
+    }
+    25% {
+        transform: rotate(2deg) scale(1.05);
+    }
+    75% {
+        transform: rotate(-2deg) scale(1.05);
+    }
+}
+
+
+
+/*
+ESTO LO OMITO POR QUE YA EL LOGO SERA LA IMAGEN
+
+header h1 {
+  margin: 0;
+  width: 100%;
+}
+*/
+
+/* ====== NAVEGACIÓN DESKTOP ====== */
+header nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+header nav a {
+  text-decoration: none;
+  color: var(--color-blanco);
+  font-weight: bold;
+  position: relative;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+/* Efecto subrayado animado */
+header nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-activo);
+  transition: width 0.3s ease;
+}
+
+header nav a:hover {
+  color: var(--color-activo);
+  transform: translateY(-3px);
+}
+
+header nav a:hover::after {
+  width: 100%;
+}
+
+/* Enlace activo */
+header nav a.activo {
+  color: var(--color-activo);
+}
+
+header nav a.activo::after {
+  width: 100%;
+}
+
+/* ====== HERO ====== */
+.Hero {
+  width: 90%;
+  height: 300px;
+  margin: 20px auto;
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  background: var(--color-gris-medio);
+  transition: transform 0.3s;
+}
+
+.Hero:hover {
+  transform: scale(1.02);
+  /* Pequeño zoom */
+}
+
+
+
+/* ====== VERSIÓN BOOTSTRAP (Framework CSS) ====== */
+
+/* Hero Bootstrap */
+.hero-pedido-bootstrap {
+  margin: 40px auto;
+  padding: 40px 20px;
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+  transition: transform 0.3s;
+  background: var(--color-blanco);
+}
+
+.hero-pedido-bootstrap:hover {
+  transform: scale(1.02);
+}
+
+.hero-pedido-bootstrap h1 {
+  font-size: 32px;
+  margin-bottom: 12px;
+  color: var(--color-texto);
+}
+
+.hero-pedido-bootstrap p {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.hero-pedido-bootstrap .btn-cta {
+  display: inline-block;
+  background: #333;
+  color: var(--color-blanco);
+  padding: 10px 18px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+.hero-pedido-bootstrap .btn-cta:hover {
+  background: #555;
+  color: var(--color-blanco);
+}
+
+.hero-pedido-bootstrap img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+}
+
+/* Banner Bootstrap */
+.banner-pedido-bootstrap {
+  margin: 30px auto;
+}
+
+.banner-pedido-bootstrap article {
+  padding: 20px 24px;
+  background: #f9f9f9;
+  border: 1px solid var(--color-borde);
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+.banner-pedido-bootstrap article:hover {
+  background: var(--color-gris-oscuro);
+}
+
+/* Tarjetas Bootstrap */
+.tarjetas-pedido-bootstrap {
+  margin: 40px auto;
+}
+
+.tarjeta-pedido-bootstrap {
+  border: 1px solid var(--color-borde);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  background: var(--color-blanco);
+  transition: transform 0.3s, box-shadow 0.3s;
+  height: 100%;
+}
+
+.tarjeta-pedido-bootstrap:hover {
+  transform: translateY(-4px);
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+.tarjeta-pedido-bootstrap h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+  color: var(--color-texto);
+}
+
+.tarjeta-pedido-bootstrap p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Responsive Bootstrap */
+@media (max-width: 768px) {
+  .hero-pedido-bootstrap img {
+    max-width: clamp(220px, 60vw, 420px);
+  }
+
+  .hero-pedido-bootstrap h1 {
+    font-size: 26px;
+  }
+}
+
+
+
+/* ====== ============== */
+/* ====== BANNER ====== */
+.banner {
+  margin: 20px auto;
+  padding: 15px;
+  max-width: 70%;
+  background: var(--color-gris-claro);
+  border: 1px solid var(--color-borde-claro);
+}
+
+.banner:hover {
+  background: var(--color-gris-oscuro);
+}
+
+/* ====== TARJETAS ====== */
+.tarjetas {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin: 30px auto;
+  max-width: 1000px;
+}
+
+.tarjeta {
+  flex: 1 1 250px;
+  border: 1px solid var(--color-borde);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  background: var(--color-blanco);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.tarjeta:hover {
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* ====== FOOTER ====== */
+footer {
+  width: 100%;
+  background: var(--color-principal);
+  color: var(--color-blanco);
+  text-align: center;
+  padding: 15px;
+  margin-top: 40px;
+}
+
+
+/* ====== Extensiones para Contacto ====== */
+
+/* Enlace activo del header */
+header nav a.activo {
+  color: var(--color-activo);
+}
+
+/* Formulario */
+.tarjeta-form form {
+  display: block;
+  width: 100%;
+}
+
+.form-grupo {
+  margin-bottom: 14px;
+}
+
+.form-grupo label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.form-grupo input[type="text"],
+.form-grupo input[type="email"],
+.form-grupo input[type="tel"],
+.form-grupo input[type="url"],
+.form-grupo input[type="date"],
+.form-grupo textarea,
+.form-grupo select {
+  width: 80%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  background: var(--color-blanco);
+  color: var(--color-texto);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  font: inherit;
+}
+
+.form-grupo input:focus,
+.form-grupo textarea:focus,
+.form-grupo select:focus {
+  outline: none;
+  border-color: var(--color-principal);
+  box-shadow: 0 0 0 3px rgba(61, 137, 205, 0.15);
+}
+
+.form-grupo .ayuda {
+  display: block;
+  color: var(--color-texto-claro);
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+
+.check-linea {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  user-select: none;
+}
+
+/* Botón primario */
+.btn-primario {
+  background: var(--color-principal);
+  color: var(--color-blanco);
+  border: none;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.btn-primario:hover {
+  background: #357bbc;
+  transform: translateY(-1px);
+  box-shadow: var(--sombra);
+}
+
+.btn-primario:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+/* Tarjeta FAQ: detalles */
+.tarjeta-faq details {
+  border: 1px solid var(--color-borde-claro);
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: var(--color-gris-muy-claro);
+  margin-bottom: 12px;
+  transition: box-shadow 0.2s;
+}
+
+.tarjeta-faq details:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.tarjeta-faq summary {
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* Mapa */
+.mapa {
+  border: 1px solid var(--color-borde);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+/* Lista de enlaces de contacto */
+.lista-contacto {
+  list-style: none;
+  padding-left: 0;
+  margin: 8px 0 0 0;
+  display: grid;
+  gap: 8px;
+}
+
+.lista-contacto a {
+  text-decoration: none;
+  color: var(--color-principal);
+  font-weight: bold;
+}
+
+.lista-contacto a:hover {
+  text-decoration: underline;
+}
+
+/* Responsivo: apilar tarjetas en pantallas pequeñas */
+@media (max-width: 768px) {
+  .tarjetas {
+    flex-direction: column;
+  }
+}
+
+
+/* ====== MENÚ HAMBURGUESA (MÓVIL) ====== */
+.hamburger {
+  display: block;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1000;
+}
+
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--color-blanco);
+  margin: 5px 0;
+  transition: 0.3s;
+  border-radius: 2px;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Navegación móvil por defecto (oculta) */
+header nav ul {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: var(--color-principal);
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+header nav ul.active {
+  display: flex;
+}
+
+header nav ul li {
+  margin: 8px 0;
+}
+
+
+/* Navegación móvil por defecto (oculta) */
+header nav ul {
+  display: none;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: var(--color-principal);
+  border-radius: 8px;
+  padding: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+}
+
+header nav ul.active {
+  display: flex;
+}
+
+header nav ul li {
+  margin: 8px 0;
+}
+
+/* Estilos base móvil para hero */
+.hero-pedido-bootstrap {
+  margin: 20px auto;
+  padding: 20px 15px;
+}
+
+.hero-pedido-bootstrap h1 {
+  font-size: 24px;
+}
+
+.hero-pedido-bootstrap p {
+  font-size: 14px;
+}
+
+.hero-pedido-bootstrap img {
+  max-width: 100%;
+}
+
+/* Banner móvil */
+.banner-pedido-bootstrap article {
+  padding: 15px;
+  font-size: 14px;
+}
+
+/* Tarjetas móvil */
+.tarjeta-pedido-bootstrap h3 {
+  font-size: 18px;
+}
+
+.tarjeta-pedido-bootstrap p {
+  font-size: 13px;
+}
+
+/* ====== BREAKPOINT: TABLETAS (481px - 768px) ====== */
+@media (min-width: 481px) {
+ 
+
+  
+
+  .banner-pedido-bootstrap article {
+    padding: 18px;
+    font-size: 15px;
+  }
+
+  /* Tarjetas en tableta */
+  .tarjeta-pedido-bootstrap {
+    padding: 18px;
+  }
+}
+
+/* ====== BREAKPOINT: ESCRITORIO (769px en adelante) ====== */
+@media (min-width: 769px) {
+  /* Ocultar hamburguesa en escritorio */
+  .hamburger {
+    display: none;
+  }
+
+  /* Mostrar menú horizontal en escritorio */
+  header nav ul {
+    display: flex !important;
+    flex-direction: row;
+    position: static;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    gap: 20px;
+  }
+
+  header nav ul li {
+    margin: 0;
+  }
+
+  .hero-pedido-bootstrap h1 {
+    font-size: 32px;
+  }
+
+  .hero-pedido-bootstrap p {
+    font-size: 16px;
+  }
+
+  .hero-pedido-bootstrap img {
+    max-width: 500px;
+  }
+
+  /* Banner escritorio */
+  .banner-pedido-bootstrap article {
+    padding: 20px 24px;
+    font-size: 16px;
+  }
+
+  /* Tarjetas escritorio */
+  .tarjeta-pedido-bootstrap {
+    padding: 20px;
+  }
+
+  .tarjeta-pedido-bootstrap h3 {
+    font-size: 20px;
+  }
+
+  .tarjeta-pedido-bootstrap p {
+    font-size: 14px;
+  }
+}
+
+/* ====== BREAKPOINT EXTRA: Pantallas grandes (1200px+) ====== */
+@media (min-width: 1200px) {
+  .hero-pedido-bootstrap {
+    max-width: 1200px;
+  }
+
+  .tarjetas-pedido-bootstrap .container {
+    max-width: 1200px;
+  }
+}
+
+
+
+
+/* ====== PODCAST PLAYER (custom) ====== */
+/* Ajusta estos valores a TU guía de estilo */
+:root{
+  --brand: #ff6a00;        /* <-- tu color principal */
+  --brand-2: #111827;      /* <-- tu color oscuro / texto */
+  --surface: #ffffff;      /* fondo tarjetas */
+  --border: rgba(17,24,39,.12);
+}
+
+.audio-player .ap-ui{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+}
+
+.audio-player .ap-btn{
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--brand);
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font: inherit; /* respeta tu tipografía */
+}
+
+.audio-player .ap-btn:focus-visible{
+  outline: 3px solid color-mix(in srgb, var(--brand) 60%, white);
+  outline-offset: 2px;
+}
+
+.audio-player .ap-times{
+  min-width: 110px;
+  font-variant-numeric: tabular-nums;
+  color: var(--brand-2);
+  opacity: 0.9;
+}
+
+.audio-player input[type="range"]{
+  accent-color: var(--brand); /* clave para “usar tus colores” */
+}
+
+.audio-player .ap-range-wrap{
+  flex: 1;
+}
+
+.audio-player .ap-seek{
+  width: 100%;
+}
+
+.audio-player .ap-vol-wrap{
+  width: 110px;
+}
+
+@media (max-width: 576px){
+  .audio-player .ap-vol-wrap{
+    display: none; /* en móvil simplificamos */
+  }
+}
+
+
+
+/* ========================================
+   HERO VIDEO FULLSCREEN
+   ======================================== */
+.hero-video-fullscreen {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Ocupa toda la altura de la pantalla */
+  overflow: hidden;
+  background-color: #000;
+}
+
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.video-fullscreen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* El video cubre todo el espacio sin deformarse */
+  display: block;
+}
+
+/* Overlay opcional (texto sobre el video) */
+.video-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.6) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none; /* Permite hacer clic en los controles del video */
+}
+
+.video-overlay .container {
+  pointer-events: auto; /* Permite interactuar con el botón */
+}
+
+/* Responsive: en móvil, reducir altura si es necesario */
+@media (max-width: 768px) {
+  .hero-video-fullscreen {
+    height: 70vh; /* Ajusta según tu diseño */
+  }
+}

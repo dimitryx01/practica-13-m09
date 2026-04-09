@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>La Arepa - Podcasts</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+  <!-- Font Awesome (añádelo desde https://fontawesome.com/) -->
+<script src="https://kit.fontawesome.com/315e9e1148.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <div class="header-w">
+      <div class="logo" role="img" aria-label="Logo de La Arepa">
+                <div class="logo-part logo-cuadrado"></div>
+                <div class="logo-part logo-rectangulo"></div>
+            </div>
+      <nav class="nav-responsive">
+        <button class="hamburger" id="hamburger" aria-label="Menú">
+          <span></span><span></span><span></span>
+        </button>
+
+        
+                <ul id="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="podcast.html" class="activo">Podcasts</a></li>
+                    <li><a href="video.html" >Video</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO (reuso tu estilo para coherencia) -->
+    <section class="hero-pedido-bootstrap">
+      <div class="container">
+        <div class="row align-items-center g-4">
+          <div class="col-md-6 order-md-1 order-2">
+            <h1>Podcasts de La Arepa</h1>
+            <p>
+              Micro-episodios sobre ingredientes, historia y cultura alrededor de la arepa.
+              Audio optimizado para web (MP3 + OGG) y con reproductor personalizado.
+            </p>
+            <a href="#episodios" class="btn-cta">Ver episodios</a>
+          </div>
+
+          <div class="col-md-6 order-md-2 order-1 text-center">
+            <!-- Puedes reemplazar esta imagen por una de podcast/micro -->
+            <img src="img/hero-arepa.png" alt="Ilustración relacionada con La Arepa" class="img-fluid" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BANNER -->
+    <div class="banner-pedido-bootstrap">
+      <div class="container">
+        <article class="text-center">
+          Dos episodios de podcast generados con IA para la actividad de la clase 8 
+        </article>
+      </div>
+    </div>
+
+    <!-- EPISODIOS -->
+    <section class="tarjetas-pedido-bootstrap py-5" id="episodios">
+      <div class="container">
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-end gap-2 mb-4">
+          <div>
+            <h2 class="mb-1">Episodios</h2>
+            <p class="mb-0">Incluye MP3 (170–210 kbps) + OGG Vorbis (calidad 8) para compatibilidad total.</p>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <!-- EPISODIO 1 -->
+          <div class="col-lg-6">
+            <article class="tarjeta-pedido-bootstrap">
+              <div class="d-flex justify-content-between align-items-start gap-3">
+                <div>
+                  <h3 class="mb-1">Episodio 1 — ¿Qué es una arepa?</h3>
+                  <p class="mb-2">
+                    Mini introducción narrada. (Sustituye este texto por tu descripción real)
+                  </p>
+                  <small class="text-muted d-block mb-3">
+                    Formato: audio | UX: sin autoplay | Rendimiento: preload metadata
+                  </small>
+                </div>
+
+                <div class="text-muted" aria-hidden="true" title="Podcast">
+                  <i class="fa-solid fa-microphone-lines"></i>
+                </div>
+              </div>
+
+              <!-- Reproductor personalizado -->
+              <div class="audio-player" data-player>
+                <audio preload="metadata">
+                  <source src="audio/luvvoice.com-20260115-dmSP86.ogg" type="audio/ogg; codecs=vorbis" />
+                  <source src="audio/luvvoice.com-20260115-dmSP86-2.mp3" type="audio/mpeg" />
+                  Tu navegador no soporta audio HTML5.
+                </audio>
+
+                <div class="ap-ui" role="group" aria-label="Reproductor de audio: Episodio 1">
+                  <button type="button" class="ap-btn ap-play" data-action="toggle" aria-label="Reproducir">
+                    <i class="fa-solid fa-play" aria-hidden="true"></i>
+                  </button>
+
+                  <div class="ap-times">
+                    <span class="ap-current" aria-label="Tiempo actual">0:00</span>
+                    <span class="ap-sep" aria-hidden="true">/</span>
+                    <span class="ap-duration" aria-label="Duración total">0:00</span>
+                  </div>
+
+                  <label class="ap-range-wrap">
+                    <span class="visually-hidden">Barra de progreso</span>
+                    <input class="ap-seek" type="range" min="0" max="100" value="0" step="0.1" />
+                  </label>
+
+                  <button type="button" class="ap-btn ap-mute" data-action="mute" aria-label="Silenciar">
+                    <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                  </button>
+
+                  <label class="ap-vol-wrap">
+                    <span class="visually-hidden">Volumen</span>
+                    <input class="ap-volume" type="range" min="0" max="1" value="1" step="0.01" />
+                  </label>
+                </div>
+
+                <small class="text-muted d-block mt-2">
+                  Archivos: <code>audio/episodio-1.mp3</code> y <code>audio/episodio-1.ogg</code>
+                </small>
+              </div>
+            </article>
+          </div>
+
+          <!-- EPISODIO 2 -->
+          <div class="col-lg-6">
+            <article class="tarjeta-pedido-bootstrap">
+              <div class="d-flex justify-content-between align-items-start gap-3">
+                <div>
+                  <h3 class="mb-1">Episodio 2 — Rellenos clásicos</h3>
+                  <p class="mb-2">
+                    Reina Pepiada, Pelúa y Dominó: qué llevan y por qué son tan populares.
+                  </p>
+                  <small class="text-muted d-block mb-3">
+                    Consejo: si reutilizas música/FX, documenta licencia y atribución.
+                  </small>
+                </div>
+
+                <div class="text-muted" aria-hidden="true" title="Audio">
+                  <i class="fa-solid fa-headphones"></i>
+                </div>
+              </div>
+
+              <div class="audio-player" data-player>
+                <audio preload="metadata">
+                  <source src="audio/luvvoice.com-20260115-GUsMVw.ogg" type="audio/ogg; codecs=vorbis" />
+                  <source src="audio/luvvoice.com-20260115-GUsMVw.mp3" type="audio/mpeg" />
+                  Tu navegador no soporta audio HTML5.
+                </audio>
+
+                <div class="ap-ui" role="group" aria-label="Reproductor de audio: Episodio 2">
+                  <button type="button" class="ap-btn ap-play" data-action="toggle" aria-label="Reproducir">
+                    <i class="fa-solid fa-play" aria-hidden="true"></i>
+                  </button>
+
+                  <div class="ap-times">
+                    <span class="ap-current" aria-label="Tiempo actual">0:00</span>
+                    <span class="ap-sep" aria-hidden="true">/</span>
+                    <span class="ap-duration" aria-label="Duración total">0:00</span>
+                  </div>
+
+                  <label class="ap-range-wrap">
+                    <span class="visually-hidden">Barra de progreso</span>
+                    <input class="ap-seek" type="range" min="0" max="100" value="0" step="0.1" />
+                  </label>
+
+                  <button type="button" class="ap-btn ap-mute" data-action="mute" aria-label="Silenciar">
+                    <i class="fa-solid fa-volume-high" aria-hidden="true"></i>
+                  </button>
+
+                  <label class="ap-vol-wrap">
+                    <span class="visually-hidden">Volumen</span>
+                    <input class="ap-volume" type="range" min="0" max="1" value="1" step="0.01" />
+                  </label>
+                </div>
+
+                <small class="text-muted d-block mt-2">
+                  Archivos: <code>audio/episodio-2.mp3</code> y <code>audio/episodio-2.ogg</code>
+                </small>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+   <!-- SECCIÓN: LICENCIA / ATRIBUCIÓN (Fase 1 de la Práctica) -->
+    <section class="py-5" id="licencias">
+      <div class="container">
+        <div class="row g-4 align-items-start">
+          <div class="col-lg-6">
+            <h2>Fase 1: Selección y Ética del Material</h2>
+            <p class="mb-3">
+              Para la elaboración de este recurso multimedia, se ha seguido un proceso de creación propia y uso de herramientas de IA ética.
+            </p>
+            <ul class="list-unstyled">
+              <li class="mb-3">
+                <strong><i class="fa-solid fa-pen-nib me-2"></i>Procedencia:</strong> 
+                El guion es de autoría propia. La locución ha sido generada mediante la herramienta de texto a voz (TTS) 
+                <a href="https://luvvoice.com/es" target="_blank" rel="noopener">Luvvoice</a>.
+              </li>
+              <li class="mb-3">
+                <strong><i class="fa-solid fa-scale-balanced me-2"></i>Licencia:</strong> 
+                El contenido (guion) se distribuye bajo licencia <strong>Creative Commons Atribución 4.0 (CC BY 4.0)</strong>. 
+                El audio generado es de plena propiedad del usuario según los términos de servicio de Luvvoice.
+              </li>
+              <li class="mb-3">
+                <strong><i class="fa-solid fa-link me-2"></i>Repositorios:</strong> 
+                No se han utilizado repositorios externos de audio pregrabado, garantizando la originalidad del recurso.
+              </li>
+              <li class="mb-3">
+                <strong><i class="fa-solid fa-circle-info me-2"></i>Ética:</strong> 
+                Se ha verificado que la herramienta utilizada permite el uso comercial y la libre distribución de los archivos generados.
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="tarjeta-pedido-bootstrap">
+              <h3 class="mb-3">Resumen de Optimización (Fase 2)</h3>
+              <p>Tras la generación del audio original en Luvvoice, se han realizado los siguientes pasos en <strong>Audacity</strong>:</p>
+              <ul class="mb-0">
+                <li><strong>Edición:</strong> Eliminación de silencios iniciales/finales y normalización.</li>
+                <li><strong>Muestreo:</strong> Reducción de la frecuencia a <strong>22.050 Hz</strong> para optimizar el rendimiento web.</li>
+                <li><strong>Exportación:</strong> Generación de contenedores <strong>MP3</strong> (192kbps) y <strong>OGG Vorbis</strong> (Q8).</li>
+                <li><strong>UX:</strong> Integración de controles personalizados con <strong>Font Awesome</strong> y colores corporativos.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div>
+      <small>&copy; 2025 · Ilerna</small>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="menu.js"></script>
+
+  <!-- Reproductor custom -->
+  <script src="podcast-player.js"></script>
+</body>
+</html>

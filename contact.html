@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La Arepa - Contacto</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="header-w">
+            <div class="logo" role="img" aria-label="Logo de La Arepa">
+                <div class="logo-part logo-cuadrado"></div>
+                <div class="logo-part logo-rectangulo"></div>
+            </div>
+            <nav class="nav-responsive">
+                <button class="hamburger" id="hamburger" aria-label="Menú">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul id="nav-menu">
+                    <li><a href="index.html" >Inicio</a></li>
+                    <li><a href="podcast.html" >Podcasts</a></li>
+                    <li><a href="video.html" >Video</a></li>
+                    <li><a href="contact.html" class="activo">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="contacto">
+
+
+        <div class="banner">
+            <article>
+                ¿Tienes preguntas, sugerencias o quieres colaborar con nosotros? Completa el formulario y nos pondremos
+                en contacto lo antes posible.
+            </article>
+        </div>
+
+        <section class="tarjetas tarjetas-contacto">
+            <div class="tarjeta tarjeta-form">
+                <h3>Envíanos un mensaje</h3>
+                <form action="#" method="post" novalidate>
+                    <div class="form-grupo">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre" />
+                        <small class="ayuda">Obligatorio</small>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" required placeholder="tu@correo.com" />
+                        <small class="ayuda">Usaremos este correo para responderte</small>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="asunto">Asunto</label>
+                        <input type="text" id="asunto" name="asunto" placeholder="Motivo del mensaje" />
+                    </div>
+
+                    <div class="form-grupo">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="6" required
+                            placeholder="Cuéntanos en qué podemos ayudarte"></textarea>
+                    </div>
+
+                    <div class="form-grupo">
+                        <label class="check-linea">
+                            <input type="checkbox" id="acepta" name="acepta" required />
+                            Acepto la política de privacidad
+                        </label>
+                    </div>
+
+                    <button type="submit" class="btn-primario">Enviar</button>
+                </form>
+            </div>
+
+            <div class="tarjeta tarjeta-info">
+                <h3>Información de contacto</h3>
+                <p><strong>Email:</strong> contacto@laarepa.com</p>
+                <p><strong>Teléfono:</strong> +57 300 000 0000</p>
+                <p><strong>Horario:</strong> Lun–Vie, 9:00–18:00</p>
+
+                <h3 style="margin-top: 20px;">Redes</h3>
+                <ul class="lista-contacto">
+                    <li><a href="#" aria-label="Instagram">Instagram</a></li>
+                    <li><a href="#" aria-label="Facebook">Facebook</a></li>
+                    <li><a href="#" aria-label="TikTok">TikTok</a></li>
+                </ul>
+
+                <div class="separador"></div>
+
+                <div class="tarjeta-faq">
+                    <h3>Preguntas frecuentes</h3>
+
+                    <details>
+                        <summary>¿En cuánto tiempo responden?</summary>
+                        <p>Normalmente en 24–48 horas hábiles.</p>
+                    </details>
+
+                    <details>
+                        <summary>¿Puedo enviar recetas?</summary>
+                        <p>¡Sí! Adjunta el enlace o escríbenos los pasos en el mensaje.</p>
+                    </details>
+
+                    <details>
+                        <summary>¿Atención presencial?</summary>
+                        <p>Por ahora solo atención online.</p>
+                    </details>
+                </div>
+            </div>
+
+            <div class="tarjeta tarjeta-mapa">
+                <h3>Ubicación</h3>
+                <p>Bogotá, Colombia</p>
+                <div class="mapa">
+                    <iframe title="Mapa La Arepa" src="https://www.google.com/maps?q=Bogota,Colombia&output=embed"
+                        width="100%" height="320" style="border:0;" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer_c">
+            <small>&copy; 2025 · Ilerna</small>
+        </div>
+    </footer>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script del menú hamburguesa -->
+    <script src="menu.js"></script>
+</body>
+
+</html>

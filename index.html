@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="page-title">La Arepa - Colombia (Bootstrap)</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- CSS Práctica 13 -->
+    <link rel="stylesheet" href="css/interactividad_practica13.css">
+
+    <!-- jQuery UI CSS -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <!-- favicon :D -->
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+
+    <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="img/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+</head>
+
+<body>
+    <header>
+        <div class="header-w">
+            <div class="logo" role="img" aria-label="Logo de La Arepa">
+                <div class="logo-part logo-cuadrado"></div>
+                <div class="logo-part logo-rectangulo"></div>
+            </div>
+            <!-- SELECTOR DE IDIOMAS-->
+            <div id="selector-idiomas" class="me-3">
+                <button class="btn btn-sm btn-outline-light" data-lang="ca">CA</button>
+                <button class="btn btn-sm btn-outline-light" data-lang="es">ES</button>
+                <button class="btn btn-sm btn-outline-light" data-lang="en">EN</button>
+            </div>
+
+            <nav class="nav-responsive">
+                <button class="hamburger" id="hamburger" aria-label="Menú">
+                    <span></span><span></span><span></span>
+                </button>
+
+                <ul id="nav-menu">
+                    <li><a href="index.html" class="activo" id="nav-home">Inicio</a></li>
+                    <li><a href="podcast.html" id="nav-podcast">Podcasts</a></li>
+                    <li><a href="video.html" id="nav-video">Video</a></li>
+                    <li><a href="contact.html" id="nav-contact">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO -->
+        <section class="hero-pedido-bootstrap js-interact-v1-hero">
+            <canvas id="interactive-canvas" class="js-interact-v1 canvas-bg"></canvas>
+            <div class="container hero-content">
+                <div class="row align-items-center g-4">
+                    <div class="col-md-6 order-md-1 order-2">
+                        <h1 id="hero-title">Haz tu pedido ahora</h1>
+                        <p id="hero-desc">Arepas recién hechas, carne mechada y queso derretido. Entrega rápida.</p>
+                        <a href="#pedido" class="btn-cta" id="hero-btn">Hacer pedido</a>
+                    </div>
+                    <div class="col-md-6 order-md-2 order-1 text-center">
+                        <img src="img/hero-arepa.png" alt="Arepa con carne y queso" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BANNER -->
+        <div class="banner-pedido-bootstrap">
+            <div class="container">
+                <article class="text-center" id="banner-text">
+                    Más que comida: la arepa es tradición, energía y sabor. Aquí vas a descubrir por qué todos hablan de
+                    ella.
+
+                </article>
+            </div>
+        </div>
+
+        <!-- TARJETAS -->
+        <section class="tarjetas-pedido-bootstrap">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="tarjeta-pedido-bootstrap">
+                            <img src="img/r-arepa-1.jpg" alt="Arepa Reina Pepiada">
+                            <h3 id="card1-title">Arepa Reina Pepiada</h3>
+                            <p id="card1-desc">Una arepa clásica rellena de una deliciosa mezcla de pollo desmechado,
+                                aguacate cremoso y mayonesa.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="tarjeta-pedido-bootstrap">
+                            <img src="img/r-arepa-2.jpg" alt="Arepa Pelúa">
+                            <h3 id="card2-title">Arepa Pelúa</h3>
+                            <p id="card2-desc">La combinación perfecta de carne mechada jugosa y queso amarillo rallado,
+                                todo dentro de una arepa dorada.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="tarjeta-pedido-bootstrap">
+                            <img src="img/r-arepa-3.jpg" alt="Arepa Dominó">
+                            <h3 id="card3-title">Arepa Dominó</h3>
+                            <p id="card3-desc">Una explosión de sabor con frijoles negros refritos y queso blanco
+                                rallado, una opción vegetariana irresistible.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- BENEFICIOS -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6">
+                        <h2 id="why-title">¿Por qué pedir en La Arepa?</h2>
+                        <p id="why-desc">Trabajamos con masa fresca todos los días y seleccionamos ingredientes de
+                            calidad para que cada bocado tenga el auténtico sabor colombiano y venezolano.</p>
+                        <ul class="list-unstyled mt-3">
+                            <li class="mb-2" id="li-1">✔ Arepas hechas al momento</li>
+                            <li class="mb-2" id="li-2">✔ Ingredientes frescos y de proximidad</li>
+                            <li class="mb-2" id="li-3">✔ Opciones para carnívoros y vegetarianos</li>
+                            <li class="mb-2" id="li-4">✔ Entrega rápida en tu zona</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="row g-3">
+                            <div class="col-6">
+                                <div
+                                    class="tarjeta-pedido-bootstrap h-100 d-flex flex-column justify-content-center text-center">
+                                    <h3>+50</h3>
+                                    <p id="stat-1">Clientes satisfechos cada semana</p>
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div
+                                    class="tarjeta-pedido-bootstrap h-100 d-flex flex-column justify-content-center text-center">
+                                    <h3>4.8/5</h3>
+                                    <p id="stat-2">Valoración media de nuestros pedidos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GRÁFICO ESTADÍSTICO (Práctica 13) -->
+        <section class="py-5 js-interact-v1-chart-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4 text-center mb-4 mb-md-0">
+                        <h2 class="mb-3">Demandas por Mes</h2>
+                        <p class="text-muted">Desempeño mensual interactivo. Los colores de la gráfica están adaptados al diseño de la página.</p>
+                        <div class="btn-group gap-2 js-interact-v1-controls" role="group">
+                            <button class="btn btn-outline-dark" id="btn-update-data">Cambiar Datos</button>
+                            <button class="btn btn-outline-dark" id="btn-toggle-type">Cambiar Gráfico</button>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="chart-container js-interact-v1">
+                            <canvas id="salesChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESO -->
+        <section class="banner-pedido-bootstrap" id="pedido">
+            <div class="container py-5">
+                <h2 class="text-center mb-4" id="process-title">Pedir tu arepa es muy fácil</h2>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-3 col-6">
+                        <div class="tarjeta-pedido-bootstrap text-center">
+                            <h3 id="step1-title">1. Elige</h3>
+                            <p id="step1-desc">Selecciona tu arepa favorita de nuestro menú.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="tarjeta-pedido-bootstrap text-center">
+                            <h3 id="step2-title">2. Personaliza</h3>
+                            <p id="step2-desc">Añade extras, quita ingredientes o elige tu tipo de queso.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="tarjeta-pedido-bootstrap text-center">
+                            <h3 id="step3-title">3. Disfruta</h3>
+                            <p id="step3-desc">La preparamos al momento y te la llevamos calentita a casa.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <a href="contact.html" class="btn-cta" id="process-btn">Quiero hacer un pedido</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <section class="container py-5">
+        <div class="card p-4 shadow-sm">
+            <h2 id="titulo-pedidos">Mis Pedidos</h2>
+            <p class="instrucciones">Escribe el nombre de tu arepa y pulsa Enter o el boton.</p>
+
+            <div class="input-group mb-3">
+                <!-- Mision 5: Datepicker -->
+                <input type="text" id="fecha-pedido" class="form-control" placeholder="Fecha de entrega">
+                <input type="text" id="input-arepa" class="form-control" placeholder="Nombre de la arepa...">
+                <button class="btn btn-primary" id="btn-agregar">Agregar al pedido</button>
+            </div>
+
+            <ul id="lista-pedidos" class="list-group">
+                <!-- Aqui se agregaran los items -->
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <div>
+            <small id="footer-text">&copy; 2025 · Ilerna</small>
+        </div>
+    </footer>
+    <!-- 1. jQuery Primero -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <!-- 2. jQuery UI Segundo (Faltaba este) -->
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="menu.js"></script>
+    <!-- script de traduccion-->
+    <script src="script.js"></script>
+
+    <script src="jquery.js"></script>
+
+    <!-- Librerías Externas Práctica 13 (Chart.js y Anime.js) -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+
+    <!-- Módulo JS Práctica 13 -->
+    <script type="module" src="js/interactividad_practica13.js"></script>
+
+</body>
+
+</html>

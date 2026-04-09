@@ -1,0 +1,68 @@
+/* ==========================================================================
+   Práctica 13: Integración de contenidos interactivos (CSS)
+   Prefijos/Aislamiento: .js-interact-v1
+   ========================================================================== */
+
+/* 1. Canvas Background */
+.js-interact-v1-hero {
+    position: relative; /* Necesario para contener el canvas absoluto */
+    overflow: hidden;
+    /* Ajuste visual para el hero modificado */
+    border: 1px solid var(--color-borde);
+    border-radius: 10px;
+    background: var(--color-blanco);
+    padding: 40px 20px;
+    margin: 40px auto;
+}
+
+.js-interact-v1.canvas-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1; /* Detrás del contenido pero delante del fondo base */
+    pointer-events: auto; /* Para que reciba el movimiento del ratón */
+}
+
+/* Asegurar que el contenido del hero esté por encima del canvas */
+.js-interact-v1-hero .hero-content {
+    position: relative;
+    z-index: 2;
+    pointer-events: none; /* Los clicks pasan al mousemove de canvas */
+}
+
+.js-interact-v1-hero .hero-content a,
+.js-interact-v1-hero .hero-content button,
+.js-interact-v1-hero .hero-content img {
+    pointer-events: auto; /* Elementos interactivos siguen siéndolo */
+}
+
+/* 2. Sección del Gráfico (Chart.js) */
+.js-interact-v1-chart-section {
+    background-color: var(--color-gris-muy-claro, #fafafa);
+    border-top: 1px solid var(--color-gris-oscuro, #e0e0e0);
+    border-bottom: 1px solid var(--color-gris-oscuro, #e0e0e0);
+}
+
+.chart-container.js-interact-v1 {
+    position: relative;
+    height: 400px;
+    width: 100%;
+    background: var(--color-blanco, #ffffff);
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--color-borde, #ff9505);
+}
+
+.js-interact-v1-controls button {
+    transition: all 0.3s ease;
+}
+
+/* 3. Anime.js (Tarjetas - Micro-interacciones visuales) */
+/* El origen de la transformación para escalados agradables */
+.tarjeta-pedido-bootstrap {
+    transform-origin: center center;
+    will-change: transform, opacity, box-shadow; /* Optimización */
+}

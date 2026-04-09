@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>La Arepa - Video Promocional</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome Kit -->
+    <script src="https://kit.fontawesome.com/315e9e1148.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <div class="header-w">
+             <div class="logo" role="img" aria-label="Logo de La Arepa">
+                <div class="logo-part logo-cuadrado"></div>
+                <div class="logo-part logo-rectangulo"></div>
+            </div>
+            <nav class="nav-responsive">
+                <button class="hamburger" id="hamburger" aria-label="Menú">
+                    <span></span><span></span><span></span>
+                </button>
+
+                <ul id="nav-menu">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="podcast.html">Podcasts</a></li>
+                    <li><a href="video.html" class="activo">Video</a></li>
+                    <li><a href="contact.html">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HERO VIDEO A PANTALLA COMPLETA -->
+        <section class="hero-video-fullscreen">
+            <div class="video-container">
+                <video id="hero-video" controls autoplay muted loop poster="img/poster-arepa.jpg" preload="metadata"
+                    playsinline class="video-fullscreen">
+                    <source src="video/AREPA.mp4" type="video/mp4" />
+                    <source src="video/AREPA.webm" type="video/webm" />
+                    <p>Tu navegador no soporta el elemento <code>&lt;video&gt;</code>.
+                        <a href="video/AREPA.mp4">Descarga el video aquí</a>.
+                    </p>
+                </video>
+
+                <!-- Overlay con información (opcional, se puede quitar) -->
+                <div class="video-overlay">
+                    <div class="container text-center text-white">
+                        <h1 class="display-4 fw-bold mb-3">La Arepa que Conquista</h1>
+                        <p class="lead mb-4">
+                            Video promocional optimizado para web. Formatos MP4 + WebM para máxima compatibilidad.
+                        </p>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer>
+        <div>
+            <small>&copy; 2025 · Ilerna · La Arepa</small>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="menu.js"></script>
+</body>
+
+</html>
